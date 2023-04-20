@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Start Page</title>
+    <link rel="stylesheet" type="text/css" href="/styles/Startpage_style.css">
+  </head>
+  <body>
+    <div class="terminal">
+      <div class="command-line"></div>
+      <label for="username-input">Username:</label>
+      <input type="text" id="username-input" placeholder="$" name="username-input">
+      <label for="age-input">Age:</label>
+      <input type="text" id="age-input" placeholder="$" age="age-input">      
+      <button id="start-button">Start Game</button>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "/scripts/firebaseApp";
+      import { getDatabase, ref, set } from "/scripts/firebaseDatabase";
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCmUypwrZbEQFi50k51k6pActdXqE32cNk",
+        authDomain: "test1-70969.firebaseapp.com",
+        projectId: "test1-70969",
+        storageBucket: "test1-70969.appspot.com",
+        messagingSenderId: "946281572913",
+        appId: "1:946281572913:web:2f4e7f24c04f6618800310",
+        databaseURL: "https://test1-70969-default-rtdb.asia-southeast1.firebasedatabase.app"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const dB = getDatabase();
+
+      // REFERENCES
+      const nameBox = document.getElementById("username-input");
+      const ageBox = document.getElementById("age-input");
+      const submitBtn = document.getElementById("start-button");
+
+      function save(event) {
+        event.preventDefault(); // prevent form submission from reloading the page
+
+        set(ref(dB, "PlayerName/" + nameBox.value),{
+            UserName: nameBox.value,
+            Age: ageBox.value
+        })
+        .then(() => {
+            // alert("Data Stored Successfully!");
+            console.log("Successful")
+            window.location.href = "/KeyFinger.html";
+        })
+        .catch((error) => {
+            // alert("Operation not Successful!, ERROR" + error);
+            console.log("Unsuccessful")
+        });
+        }
+    
+        submitBtn.addEventListener("click", () => {
+          if (nameBox.value === "" || ageBox.value === "") {
+            alert("Please enter Username and Age to start the Game :)");
+          }
+          else {
+            save(event);
+          }
+        });
+    </script>
+
+    <script type="module" src="/scripts/Startpage_script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+	"name": "key-finger",
+	"version": "1.0.0",
+	"description": "A speed typing game for programmers",
+	"author": "Sachin & Vineet",
+	"source": "index.html",
+	"private": true,
+	"scripts": {
+		"start": "parcel",
+		"clean": "rm -rf dist",
+		"build": "yarn clean && parcel build"
+	},
+	"devDependencies": {
+		"firebase-tools": "^11.24.1",
+		"parcel": "^2.8.3",
+		"process": "^0.11.10"
+	},
+	"dependencies": {
+		"firebase": "^9.20.0",
+		"javascript": "^1.0.0",
+		"reactjs": "^1.0.0",
+		"typescript": "^5.0.4",
+		"yarn": "^1.22.19"
+	}
+}
