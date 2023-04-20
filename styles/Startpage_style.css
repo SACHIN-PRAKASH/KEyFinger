@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+  }
+  
+  .terminal {
+    margin: 150px auto;
+    max-width: 600px;
+    text-align: left;
+    white-space: pre-line;
+    overflow: hidden;
+  }
+  
+  /* FOR INTRO  */
+  .command-line:before {
+    content: " ";
+  }
+
+
+  
+  input[type="text"] {
+    background-color: black;
+    border: 0px solid black;
+    border-bottom: 2px solid white;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 5px;
+    width: 100%;
+    outline: none;
+  }
+  input[type="text"]:hover{
+    border: none;
+  }
+  
+  button {
+    background-color: black;
+    border: 0px solid black;
+    border-bottom: 3px solid white;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 25px 0px 5px 0px;
+    cursor: pointer;
+  }
+  
+  ::placeholder {
+    color: white;
+  }
