@@ -1,0 +1,52 @@
+body {
+  color: #fff;
+  background-color: #000;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.terminal {
+  max-width: 600px;
+  text-align: left;
+  white-space: pre-line;
+  margin: 150px auto;
+  overflow: hidden;
+}
+
+.command-line:before {
+  content: " ";
+}
+
+input[type="text"] {
+  color: #fff;
+  width: 100%;
+  background-color: #000;
+  border: 0 solid #000;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  margin: 10px 0;
+  padding: 5px;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+input[type="text"]:hover {
+  border: none;
+}
+
+button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #000;
+  border: 0 solid #000;
+  border-bottom: 3px solid #fff;
+  padding: 25px 0 5px;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+/*# sourceMappingURL=index.ded19d9f.css.map */
